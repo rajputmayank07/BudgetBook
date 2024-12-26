@@ -31,7 +31,7 @@ const Contributors = () => {
 
     fetchUserData();
     console.log(self_email);
-  },[]);
+  });
 
   const onSubmitFormEmail = async (e) => {
     e.preventDefault();
