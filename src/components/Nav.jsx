@@ -6,7 +6,7 @@ import {
   formatDateToLocaleString,
   getAllMatchingItems,
 } from "../helper";
-import budgetBookLogo from "../images/BudgetBook.png";
+import budgetBookLogo from "../images/Budgetbook.png";
 import ChartImage from "../images/captured-chart.png";
 
 import "../index.css";
