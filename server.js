@@ -8,6 +8,7 @@ import connectDB from "./backend/src/config/db.js";
 import bodyParser from "body-parser";
 import { getSpendingInsights } from "./controllers/insightsController.js";
 import path from "path";
+import { fileURLToPath } from "url";
 import morgan from "morgan";
 import dotenv from "dotenv";
 dotenv.config();
@@ -29,6 +30,9 @@ import {
 
 const app = express();
 const port =process.env.PORT || 5000;
+//define dirname for es modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //for logging 
 app.use(morgan("combined"));
