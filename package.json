@@ -7,7 +7,7 @@
     "start": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    "both": "concurrently \"npm run start\" \"nodemon server.js\""
+    "both": "concurrently \"npm run start\" \"node server.js\""
   },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

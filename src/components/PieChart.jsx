@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
@@ -70,7 +71,7 @@ const captureChart = () => {
 
     // Send the image data to your server
     axios
-      .post("http://localhost:5000/save-image", { image: chartImage })
+      .post(`${API_BASE_URL}/save-image`, { image: chartImage })
       .then((response) => {
         window.alert("Image captured Successfully!");
       })

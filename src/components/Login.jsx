@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +19,7 @@ const Login = () => {
     try {
       const body = { email, password };
       // console.log(body);
-      const response = await fetch("http://localhost:5000/login", {
+      const response = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +45,7 @@ const Login = () => {
         try {
           const category_body = { user_id };
           const category_response = await fetch(
-            "http://localhost:5000/fetchBudgets",
+            `${API_BASE_URL}/fetchBudgets`,
             {
               method: "POST",
               headers: {

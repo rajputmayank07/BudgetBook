@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useState, useEffect } from "react";
 
 const SpendingInsights = () => {
@@ -8,7 +9,7 @@ const SpendingInsights = () => {
       const user_details = JSON.parse(localStorage.getItem("user_details"));
       if (!user_details || !user_details.id) return;
 
-      const response = await fetch("http://localhost:5000/api/insights", {
+      const response = await fetch(`${API_BASE_URL}/api/insights`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: user_details.id }),

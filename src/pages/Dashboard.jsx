@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useEffect, useState } from "react";
 import {
   createBudget,
@@ -131,21 +132,6 @@ const Dashboard = () => {
       setBalance(parseFloat(await userDetails.balance));
       setUsername(user_username);
       setEmail(userEmail);
-      // if (userID) {
-      //   try {
-      //     const response = await fetch(
-      //       `http://localhost:5000/getuser/${userID}`
-      //     );
-      //     if (!response.ok) {
-      //       throw new Error("Network response was not ok");
-      //     }
-      //     const data = await response.json();
-      //     setUsername(data.user_name);
-      //     setEmail(userEmail);
-      //   } catch (error) {
-      //     console.error("Error fetching user data:", error);
-      //   }
-      // }
     };
 
     fetchUserData();
@@ -157,7 +143,7 @@ const Dashboard = () => {
     try {
       const body = { email, zeroBalance };
       // console.log(body);
-      const response = await fetch("http://localhost:5000/setzerobalance", {
+      const response = await fetch(`${API_BASE_URL}/setzerobalance`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -6,7 +6,10 @@ import groupRoutes from "./routes/groupRoutes.js";
 import connectDB from "./backend/src/config/db.js";
 import bodyParser from "body-parser";
 import { getSpendingInsights } from "./controllers/insightsController.js";
+import path from "path";
 
+import dotenv from "dotenv";
+dotenv.config();
 
 // import categoryRoutes from "./routes/categoryRoutes.js";
 import {
@@ -24,7 +27,7 @@ import {
 } from "./controllers/ContributeController.js";
 
 const app = express();
-const port = 5000;
+const port =process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
@@ -43,6 +46,16 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.urlencoded({ extended: false }));
 console.log("Attempting to start the server...");
 connectDB();
+
+if (process.env.NODE_ENV === "production") {
+  const __dirname = path.resolve();
+  app.use(express.static(path.join(__dirname, "dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+  });
+}
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

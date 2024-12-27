@@ -1,8 +1,9 @@
+const API_BASE_URL = window.location.origin;
 import React, { useState } from "react";
 import groupContext from "./groupContext";
 
 const GroupState = (props) => {
-  const host = "http://localhost:5000";
+  const host = `${API_BASE_URL}`;
 
   const groupsInitial = [];
   const membersInitial = [];

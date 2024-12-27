@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useContext, useEffect, useState } from "react";
 import groupContext from "../../context/groups/groupContext";
 import { ScissorsIcon, UserGroupIcon } from "@heroicons/react/24/solid";
@@ -43,7 +44,7 @@ const GroupDetails = ({ group }) => {
     const user_details = await fetchData("user_details");
     const user_id = await user_details.id;
     const requestBody = { user_id, updatedBalances };
-    const host = "http://localhost:5000";
+    const host = `${API_BASE_URL}`;
     try {
       const response = await fetch(`${host}/api/groups/split`, {
         method: "POST",

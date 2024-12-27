@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useEffect, useState } from "react";
 //import { useNavigate } from "react-router-dom";
 
@@ -43,7 +44,7 @@ const Contributors = () => {
     try {
       const body = { email };
       // console.log(body);
-      const response = await fetch("http://localhost:5000/contribute/email", {
+      const response = await fetch(`${API_BASE_URL}/contribute/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +72,7 @@ const Contributors = () => {
       const initial_balance = await user_details.balance;
       const body = { user_id, email, amount, initial_balance };
       // console.log(body);
-      const response = await fetch("http://localhost:5000/contribute/amount", {
+      const response = await fetch(`${API_BASE_URL}/contribute/amount`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

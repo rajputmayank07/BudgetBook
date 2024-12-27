@@ -1,3 +1,4 @@
+const API_BASE_URL = window.location.origin;
 import React, { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -127,7 +128,7 @@ const Nav = () => {
       const expenses = await JSON.parse(localStorage.getItem("expenses"));
       const balance = await user_details.balance;
       const body = { budgets, expenses, id, balance };
-      const response = await fetch(`http://localhost:5000/logout`, {
+      const response = await fetch(`${API_BASE_URL}/logout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
