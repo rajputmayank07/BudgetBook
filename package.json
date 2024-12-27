@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview",
-    "both": "concurrently \"npm run start\" \"node server.js\""
+    "start": "node server.js",                    
+    "build": "vite build",                       
+    "preview": "vite preview",                   
+    "both": "npm run build && node server.js"   
   },
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
