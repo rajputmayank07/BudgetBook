@@ -1,4 +1,4 @@
-const API_BASE_URL = window.location.origin;
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +7,8 @@ import { UserPlusIcon } from "@heroicons/react/24/solid";
 
 // assets
 import problemSolving from "../assets/problemSolving.gif";
+
+const API_BASE_URL = window.location.origin;
 
 const Login = () => {
   const navigate = useNavigate();

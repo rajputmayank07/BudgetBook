@@ -1,4 +1,4 @@
-const API_BASE_URL = window.location.origin;
+
 import React, { useEffect, useState } from "react";
 import {
   createBudget,
@@ -25,6 +25,7 @@ import Alert from "../components/Alert";
 
 import problemSolving from "../assets/problemSolving.gif";
 
+const API_BASE_URL = window.location.origin;
 
 // loader
 export async function dashboardLoader() {

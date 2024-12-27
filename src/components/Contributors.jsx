@@ -1,4 +1,4 @@
-const API_BASE_URL = window.location.origin;
+
 import React, { useEffect, useState } from "react";
 //import { useNavigate } from "react-router-dom";
 
@@ -11,6 +11,8 @@ import {
 // assets
 import problemSolving from "../assets/problemSolving.gif";
 import { toast } from "react-toastify";
+
+const API_BASE_URL = window.location.origin;
 
 const Contributors = () => {
   //const navigate = useNavigate();

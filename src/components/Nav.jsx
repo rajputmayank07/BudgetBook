@@ -1,4 +1,4 @@
-const API_BASE_URL = window.location.origin;
+
 import React, { useEffect, useState } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
@@ -27,6 +27,7 @@ import invoice from "../assets/invoice.png";
 
 // rrd imports
 import { NavLink, useNavigate } from "react-router-dom";
+const API_BASE_URL = window.location.origin;
 
 const generatePDF = (data) => {
   const user_details = fetchData("user_details");

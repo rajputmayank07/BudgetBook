@@ -1,7 +1,6 @@
-const API_BASE_URL = window.location.origin;
 import React, { useState } from "react";
 import groupContext from "./groupContext";
-
+const API_BASE_URL = window.location.origin;
 const GroupState = (props) => {
   const host = `${API_BASE_URL}`;
 

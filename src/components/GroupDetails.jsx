@@ -1,9 +1,9 @@
-const API_BASE_URL = window.location.origin;
+
 import React, { useContext, useEffect, useState } from "react";
 import groupContext from "../../context/groups/groupContext";
 import { ScissorsIcon, UserGroupIcon } from "@heroicons/react/24/solid";
 import { fetchData } from "../helper.js";
-
+const API_BASE_URL = window.location.origin;
 const GroupDetails = ({ group }) => {
   const context = useContext(groupContext);
   const { members, getMembers, addMembers } = context;

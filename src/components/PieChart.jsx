@@ -1,11 +1,11 @@
-const API_BASE_URL = window.location.origin;
+
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import { calculateSpentByBudget, fetchData } from "../helper";
 import axios from "axios";
 import { CameraIcon } from "@heroicons/react/24/solid";
-
+const API_BASE_URL = window.location.origin;
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 // Function to convert HSL values to CSS-compatible RGB strings

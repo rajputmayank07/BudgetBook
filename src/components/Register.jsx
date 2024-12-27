@@ -1,4 +1,4 @@
-const API_BASE_URL = window.location.origin;
+
 /* eslint-disable jsx-a11y/img-redundant-alt */
 
 import React, { useState } from "react";
@@ -9,7 +9,7 @@ import { UserPlusIcon } from "@heroicons/react/24/solid";
 
 // assets
 import problemSolving from "../assets/problemSolving.gif";
-
+const API_BASE_URL = window.location.origin;
 const Intro = () => {
   const navigate = useNavigate();
 
